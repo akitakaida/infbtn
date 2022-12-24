@@ -1,0 +1,68 @@
+/*reset css*/
+*{
+    margin:0;
+    padding:0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    cursor:pointer;
+}
+*:focus{
+    outline: none;
+}
+a{
+    text-decoration: inherit;
+    color:inherit;
+}
+
+/*style*/
+.container{
+    text-align: center;
+    width: 80%;
+    margin:0 auto;
+}
+header{
+    background-color: greenyellow;
+}
+#btn{
+    display:block;
+    margin:  10% auto;
+    width: 100%;
+    color: black;
+    text-align: center;
+    cursor: pointer;   
+    user-select: none;
+    border: solid 1px #000;
+}
+
+#btn:active {
+    border: solid 1px #fff;
+}
+.btn{
+    width:50%;
+    padding:10px;
+    border-radius:5px;
+    background-color: gray;
+    color:white;
+    margin:10px auto;
+    border-bottom:solid 5px #000;
+    position: relative;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.btn:active{
+    top:5px;
+    border-bottom:none;
+}
+.modal{
+    height: 200px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+label > input {
+display:none; /* アップロードボタンのスタイルを無効にする */
+}
+label{
+    display:block;
+}
