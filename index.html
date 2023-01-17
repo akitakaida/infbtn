@@ -10,22 +10,32 @@
 <body>
     <header>
         <div class="container">
-            <h1>無限○○ボタン</h1>
+            <h1>無限ボタン</h1>
         </div>
     </header>
     <div class="main-wrapper">
         <div class="container">
-            <p id="btn">∞ボタン</p>
-            <p class ="btn" id="stop"><i class="fa-solid fa-square"></i> 停止</p>         
+            <div id="inf">
+                <p id="name">∞ボタン</p>
+            </div>         
+        </div>
+    </div>
+    <div class="container">
+        <div class ="btn" id="stop">
+            <p class="text"><i class="fa-solid fa-square"></i> 停止</p>
         </div>
     </div>
     <div class="container">
         <div class="modal" id="modal">
-            <label for="link" class="btn" id="linkLabel">
-                ファイルを選択
-                <input type="file" name="URL" id="link">
-            </label>
-            <p id="new" class="btn">新規作成</p>            
+            <div class="btn" id="linkLabel">
+                <label for="link" class="text" >
+                    ファイルを選択
+                    <input type="file" name="URL" id="link">
+                </label>
+            </div>
+            <div id="new"  class="btn" hidden>
+                <p class="text">新規作成</p>            
+            </div>
         </div>
     </div>
     <script src="js/script.js"></script>

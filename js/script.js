@@ -1,5 +1,15 @@
-let music = new Audio("audio/btn.mp3");
+let music = new Audio(selectAudio());
 
+//デフォルト音声の選択
+function selectAudio(){
+    let path = "audio/btn.mp3";
+    let d = new Date();
+    //クリスマス用
+    if(d.getMonth() === 11 && d.getDate() > 25) path = path.replace("btn", "Xmas");
+    return path;
+}
+
+//Fileがアップロードされたとき
 $("#link").change(function () { 
     const approvalFileType=["audio"];
     let uploadedFile=$(this).prop('files')[0] ;
@@ -20,12 +30,15 @@ $("#link").change(function () {
     reader.readAsDataURL(uploadedFile);
 });
 
-$("#btn").click(function () {
+//ボタンが押されたとき音を鳴らす
+$("#inf").click(function () {
     music.currentTime = 0;
     music.play();
     music.loop = false;
 });
 
+
+//Stop button
 $("#stop").click(function () {
     stop();
 });
@@ -38,22 +51,17 @@ function stop(){
     music.pause();
     music.currentTime = 0;
 }
-
+/*//ボタンCSSの調整
 window.onload = function(){
-    let h = $("#btn").css("width");
-    $("#btn").css("height", h)
-    $("#btn").css("line-height", h)
+    let h = $("#inf").css("width");
     let n = parseInt(h.split("px")[0]);
-    let t = n/2 + "px";
-    $("#btn").css("border-radius", t);
-    t = n/10 + "px";
-    $("#btn").css("font-size",t);
-    $(".btn").css("height",t);
-    $(".btn").css("line-height",t);
-    t = n/20 + "px";
+    let t = n/10 + "px";
+    $("#name").css("font-size",t);
+    t = n/25 + "px";
     $("header").css("font-size",t);
     $(".btn").css("font-size",t);
     t = n/100 + "px";
-    $("#btn").css("box-shadow", `${t} ${t} ${t} 0px #444`);
+    $("#inf").css("box-shadow", `${t} ${t} ${t} 0px #444`);
     $("#new").hide();
 }
+//*/
